@@ -18,7 +18,6 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column h-100 bg-light">
-        <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
@@ -50,44 +49,23 @@
         <!-- Les articles seront ajoutés ici dynamiquement -->
     </ul>
 
-    <script>
-        // Fonction pour charger et afficher les articles du flux RSS
-        function loadRSS() {
-            const RSS_URL = 'https://www.letemps.ch/cyber.rss'; // Remplacez par l'URL de votre flux RSS
-            
-            // Utilisation de fetch pour récupérer le contenu du flux RSS
-            fetch(RSS_URL)
-                .then(response => response.text())
-                .then(data => {
-                    // Utilisation de DOMParser pour parser le XML du flux RSS
-                    const parser = new DOMParser();
-                    const xml = parser.parseFromString(data, 'application/xml');
-                    
-                    // Récupération des éléments <item> (articles) du flux RSS
-                    const items = xml.querySelectorAll('item');
-                    
-                    // Boucle à travers chaque article et affichage dans la liste HTML
-                    items.forEach(item => {
-                        const title = item.querySelector('title').textContent;
-                        const link = item.querySelector('link').textContent;
-                        
-                        const listItem = document.createElement('li');
-                        const anchor = document.createElement('a');
-                        anchor.href = link;
-                        anchor.textContent = title;
-                        
-                        listItem.appendChild(anchor);
-                        document.getElementById('articles-list').appendChild(listItem);
-                    });
-                })
-                .catch(error => console.error('Erreur lors du chargement du flux RSS :', error));
-        }
-
-        // Appel de la fonction pour charger le flux RSS au chargement de la page
-        window.onload = loadRSS;
-    </script>
+    <div class='sk-ww-rss-feed' data-embed-id='25394060'></div><script src='https://widgets.sociablekit.com/rss-feed/widget.js' async defer></script>
 
                 </div>
+            </div>
+            <div class="text-center mb-5">
+               <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Mes articles</span></h1>
+           </div>
+            <div style="display:inline;text-align:center;">
+               <div style="display:inline;text-align:center;">
+            <a href="https://www.lemondeinformatique.fr/actualites/lire-une-faille-dans-webp-menace-les-navigateurs-web-91572.html"><img style="width:36vw;height:auto;" src="assets/article1.png"></a>
+            <div>Une faille dans Webp menace les navigateurs web (lemondeinformatique.fr)</div>
+         </div>
+         <br><br>
+      <div style="display:inline;text-align:center;">
+            <a href="https://www.01net.com/actualites/chatgpt-faille-securite-menace-vie-privee-ligne.html"><img style="width:36.1vw;height:auto;" src="assets/article2.jpg"></a>
+            <div>ChatGPT : une faille de sécurité menace la vie privée sur Internet (01net.com)</div>
+         </div>
             </div>
         </main>
         <!-- Footer-->
