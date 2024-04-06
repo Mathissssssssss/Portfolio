@@ -13,6 +13,50 @@
 
 
  /* Style the Image Used to Trigger the Modal */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .collapsible-section.ds-layout {
+	margin: auto;
+}
+
+.collapsible-section {
+	padding: 10px 25px;
+}
+
+main section {
+	margin-bottom: 20px;
+	position: relative;
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+}
+
+
+
+
+
+ .skill{
+  width:50vw;
+  height:auto;
+  border-radius: 1vw;
+  border-color:grey;
+  border-style: solid;
+ }
+
  #myImg {
   border-radius: 5px;
   cursor: pointer;
